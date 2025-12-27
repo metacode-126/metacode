@@ -6,16 +6,16 @@ metadata:
 spec:
   type: Python
   mode: cluster
-  image: dave126/custom-spark:3.5.4-no-kerb
+  image: dave126/custom-spark:3.5.4
   imagePullPolicy: IfNotPresent
-  mainApplicationFile: local:///opt/bitnami/spark/jobs/consume_kafka_to_postgres_batch.py
+  mainApplicationFile: local:///opt/spark/jobs/consume_kafka_to_postgres_batch.py
   deps:
     jars:
-      - local:///opt/bitnami/spark/jars/spark-sql-kafka-0-10_2.12-3.5.4.jar
-      - local:///opt/bitnami/spark/jars/kafka-clients-3.6.1.jar
-      - local:///opt/bitnami/spark/jars/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
-      - local:///opt/bitnami/spark/jars/commons-pool2-2.11.1.jar
-      - local:///opt/bitnami/spark/jars/postgresql-42.7.1.jar
+      - local:///opt/spark/jars/spark-sql-kafka-0-10_2.12-3.5.4.jar
+      - local:///opt/spark/jars/kafka-clients-3.6.1.jar
+      - local:///opt/spark/jars/spark-token-provider-kafka-0-10_2.12-3.5.4.jar
+      - local:///opt/spark/jars/commons-pool2-2.11.1.jar
+      - local:///opt/spark/jars/postgresql-42.7.1.jar
   hadoopConf:
     "hadoop.security.authentication": "simple"
     "hadoop.security.authorization": "false"
