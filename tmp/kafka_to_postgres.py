@@ -21,7 +21,7 @@ with DAG(
         task_id='submit_spark_application',
         namespace='spark',
         application_file='kafka-to-postgres-batch.yaml',
-        kubernetes_conn_id='kubernetes_default',
+        kubernetes_conn_id='spark-default',
         do_xcom_push=False,              # CR 상태를 XCom으로 받아올 수 있음
     )
 
